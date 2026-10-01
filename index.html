@@ -30,6 +30,10 @@ src="https://www.facebook.com/tr?id=1837259747521148&ev=PageView&noscript=1"
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     min-height:100vh;
@@ -114,6 +118,45 @@ h1{
     color:#aebdd0;
     font-size:16px;
     line-height:1.7;
+}
+
+/* ARROW BUTTON DESIGN */
+.arrow-btn-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.arrow-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(25, 216, 132, 0.12);
+    border: 1px solid rgba(25, 216, 132, 0.35);
+    color: #19d884;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    animation: bounceArrow 2s infinite;
+}
+
+.arrow-btn:hover {
+    background: rgba(25, 216, 132, 0.25);
+    transform: scale(1.1);
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(6px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
 }
 
 /* EDUCATION */
@@ -377,6 +420,13 @@ h1{
             improve your market knowledge and build better trading discipline.
         </p>
 
+        <!-- ARROW BUTTON -->
+        <div class="arrow-btn-container">
+            <a href="#target-button" class="arrow-btn" id="scrollArrow">
+                ↓
+            </a>
+        </div>
+
     </div>
 
 
@@ -482,8 +532,8 @@ h1{
     </div>
 
 
-    <!-- DIRECT TELEGRAM BUTTON -->
-    <div class="button-area">
+    <!-- DIRECT TELEGRAM BUTTON (TARGET FOR SCROLL) -->
+    <div class="button-area" id="target-button">
 
         <a
             id="telegramButton"
@@ -529,6 +579,22 @@ h1{
 </section>
 
 </div>
+
+<!-- 3 SECONDS AUTO-SCROLL SCRIPT -->
+<script>
+    // 3 seconds (3000 milliseconds) baad automatically niche wale button par scroll ho jayega
+    const autoScrollTimer = setTimeout(() => {
+        const targetElement = document.getElementById('target-button');
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 3000);
+
+    // Agar user khud arrow button par click karega, toh auto-scroll timer cancel ho jayega taaki conflict na ho
+    document.getElementById('scrollArrow').addEventListener('click', () => {
+        clearTimeout(autoScrollTimer);
+    });
+</script>
 
 </body>
 </html>
