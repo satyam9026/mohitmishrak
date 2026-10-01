@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1837259747521148');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1837259747521148&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Educational Trading Community</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top left,rgba(0,255,180,.12),transparent 35%),
+        radial-gradient(circle at bottom right,rgba(0,120,255,.12),transparent 35%),
+        #020817;
+    color:#fff;
+    padding:25px 15px;
+}
+
+.container{
+    width:100%;
+    max-width:720px;
+    margin:auto;
+}
+
+.card{
+    position:relative;
+    overflow:hidden;
+    background:rgba(7,22,43,.94);
+    border:1px solid rgba(0,255,180,.18);
+    border-radius:28px;
+    padding:30px 22px;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.45),
+        0 0 40px rgba(0,255,180,.05);
+}
+
+.top-line{
+    height:4px;
+    width:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,#18d9ff,#19d884,#9c45ff);
+    margin-bottom:28px;
+}
+
+/* PROFILE */
+.profile{
+    text-align:center;
+}
+
+.profile-img{
+    width:105px;
+    height:105px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #19d884;
+    padding:3px;
+    background:#07162b;
+    box-shadow:
+        0 0 0 5px rgba(25,216,132,.08),
+        0 0 35px rgba(25,216,132,.25);
+}
+
+.platform-badge{
+    display:inline-block;
+    margin-top:18px;
+    padding:9px 17px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.4px;
+    color:#19d884;
+    background:rgba(25,216,132,.08);
+    border:1px solid rgba(25,216,132,.25);
+}
+
+/* HEADING */
+h1{
+    margin-top:18px;
+    font-size:clamp(32px,7vw,54px);
+    line-height:1.05;
+    font-weight:900;
+    background:linear-gradient(90deg,#fff,#19d884,#18d9ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    margin-top:14px;
+    color:#aebdd0;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* EDUCATION */
+.education-heading{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:30px;
+    margin-bottom:18px;
+    font-size:21px;
+    font-weight:800;
+}
+
+.education-heading-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(25,216,132,.10);
+    border:1px solid rgba(25,216,132,.22);
+    font-size:20px;
+}
+
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.education-box{
+    padding:18px 14px;
+    border-radius:16px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+    transition:.25s;
+}
+
+.education-box:hover{
+    transform:translateY(-3px);
+    border-color:rgba(25,216,132,.3);
+}
+
+.education-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:rgba(24,217,255,.08);
+    margin-bottom:12px;
+    font-size:20px;
+}
+
+.education-box h3{
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.education-box p{
+    color:#8fa0b5;
+    font-size:12px;
+    line-height:1.5;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:22px;
+}
+
+.stat{
+    text-align:center;
+    padding:17px 10px;
+    border-radius:15px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.stat strong{
+    display:block;
+    font-size:22px;
+    color:#19d884;
+}
+
+.stat span{
+    display:block;
+    margin-top:5px;
+    color:#8fa0b5;
+    font-size:12px;
+}
+
+/* BUTTON AREA */
+.button-area{
+    margin-top:25px;
+    width:100%;
+}
+
+/* TELEGRAM BUTTON */
+.telegram-btn{
+    width:100%;
+    min-height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    text-decoration:none;
+    color:#fff;
+    font-size:16px;
+    font-weight:900;
+    letter-spacing:.3px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#19d884,#18d9ff);
+    box-shadow:0 12px 30px rgba(25,216,132,.18);
+    animation:telegramPulse 2s infinite;
+    transition:.3s ease;
+}
+
+.telegram-btn:hover{
+    transform:translateY(-2px) scale(1.01);
+}
+
+@keyframes telegramPulse{
+    0%,100%{
+        box-shadow:0 12px 30px rgba(25,216,132,.18);
+    }
+
+    50%{
+        box-shadow:
+            0 12px 35px rgba(25,216,132,.35),
+            0 0 25px rgba(24,217,255,.18);
+    }
+}
+
+/* NOTE */
+.note{
+    margin-top:14px;
+    text-align:center;
+    color:#7f91a8;
+    font-size:12px;
+    line-height:1.6;
+}
+
+/* DIVIDER */
+.divider{
+    height:1px;
+    margin:25px 0 20px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    color:#b9c7d8;
+    padding:14px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.025);
+    font-size:13px;
+    font-weight:700;
+    transition:.25s;
+}
+
+.secondary-btn:hover{
+    border-color:rgba(25,216,132,.3);
+    color:#19d884;
+}
+
+/* DISCLAIMER */
+.disclaimer{
+    margin-top:20px;
+    color:#687990;
+    text-align:center;
+    font-size:10px;
+    line-height:1.6;
+}
+
+/* MOBILE */
+@media(max-width:520px){
+
+    body{
+        padding:12px;
+    }
+
+    .card{
+        padding:24px 16px;
+        border-radius:22px;
+    }
+
+    .profile-img{
+        width:92px;
+        height:92px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    .subtitle{
+        font-size:14px;
+        line-height:1.65;
+    }
+
+    .education-grid{
+        grid-template-columns:1fr;
+    }
+
+    .education-box{
+        padding:16px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .telegram-btn{
+        min-height:58px;
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="card">
+
+    <div class="top-line"></div>
+
+    <!-- PROFILE / LOGO -->
+    <div class="profile">
+
+        <img
+            class="profile-img"
+            src="image.png"
+            alt="Educational Community">
+
+        <div class="platform-badge">
+            EDUCATIONAL PLATFORM
+        </div>
+
+        <h1>
+            Learn. Mohit . Grow.
+        </h1>
+
+        <p class="subtitle">
+            Learn practical market concepts, understand price action,
+            improve your market knowledge and build better trading discipline.
+        </p>
+
+    </div>
+
+
+    <!-- EDUCATION SECTION -->
+    <div class="education-heading">
+
+        <div class="education-heading-icon">
+            📚
+        </div>
+
+        <div>
+            Market Education
+        </div>
+
+    </div>
+
+
+    <div class="education-grid">
+
+        <div class="education-box">
+
+            <div class="education-icon">
+                📊
+            </div>
+
+            <h3>
+                Market Analysis
+            </h3>
+
+            <p>
+                Understand market structure, levels and important price movements.
+            </p>
+
+        </div>
+
+
+        <div class="education-box">
+
+            <div class="education-icon">
+                📈
+            </div>
+
+            <h3>
+                Price Action
+            </h3>
+
+            <p>
+                Learn practical price-action concepts and market behaviour.
+            </p>
+
+        </div>
+
+
+        <div class="education-box">
+
+            <div class="education-icon">
+                🎯
+            </div>
+
+            <h3>
+                Trading Concepts
+            </h3>
+
+            <p>
+                Explore educational concepts designed for continuous learning.
+            </p>
+
+        </div>
+
+
+        <div class="education-box">
+
+            <div class="education-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Risk Management
+            </h3>
+
+            <p>
+                Learn why discipline and risk management matter in trading.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATS -->
+    <div class="stats">
+
+        <div class="stat">
+            <strong>26K+</strong>
+            <span>Community</span>
+        </div>
+
+        <div class="stat">
+            <strong>DAILY</strong>
+            <span>Educational Updates</span>
+        </div>
+
+    </div>
+
+
+    <!-- DIRECT TELEGRAM BUTTON -->
+    <div class="button-area">
+
+        <a
+            id="telegramButton"
+            class="telegram-btn"
+            href="https://t.me/+SLXONFjoJw02M2Nl"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            ✈️ JOIN EDUCATIONAL COMMUNITY
+
+        </a>
+
+    </div>
+
+
+    <div class="note">
+        Free Access • Educational Content • Beginner Friendly
+    </div>
+
+
+    <div class="divider"></div>
+
+
+    <a
+        class="secondary-btn"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        📢 More Educational Updates
+
+    </a>
+
+
+    <div class="disclaimer">
+
+        Educational content only. This page does not provide
+        guaranteed returns or personalized investment advice.
+        Trading and investing involve market risk.
+
+    </div>
+
+</section>
+
+</div>
+
+</body>
+</html>
